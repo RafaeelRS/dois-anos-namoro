@@ -3,9 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/estilo.css">
     <title>Projeto 2 anos de namoro</title>
 </head>
 <body>
     <h1>Olá</h1>
+
+    <div class="wrapper">
+      <div class="imgs-parent">
+        <div class="img" style="background-image: url(assets/imgs/1.jpg)"></div>
+        <div class="img" style="background-image: url(assets/imgs/2.jpg)"></div>
+        <div class="img" style="background-image: url(assets/imgs/3.jpg)"></div>
+        <div class="img" style="background-image: url(assets/imgs/4.jpg)"></div>
+        <div class="img" style="background-image: url(assets/imgs/5.jpg)"></div>
+        <div class="img" style="background-image: url(assets/imgs/6.jpg)"></div>
+        <div class="img" style="background-image: url(assets/imgs/7.jpg)"></div>
+        <div class="img" style="background-image: url(assets/imgs/8.jpg)"></div>
+        <div class="img" style="background-image: url(assets/imgs/9.jpg)"></div>
+        <div class="img" style="background-image: url(assets/imgs/10.jpg)"></div>
+        <div class="img" style="background-image: url(assets/imgs/11.jpg)"></div>
+        <div class="img" style="background-image: url(assets/imgs/12.jpg)"></div>
+      </div>
+    </div>
+
+    <script>
+    document.body.addEventListener("click", (event) => {
+    const clickedElement = event.target,
+    imgs = document.querySelectorAll(".img");
+
+    if (!clickedElement.classList.contains("img")) {
+        imgs.forEach((img) => img.classList.remove("open"));
+        return;
+    }
+
+    if (clickedElement.classList.contains("open")) {
+        clickedElement.classList.remove("open");
+        return;
+    }
+
+    imgs.forEach((img) => img.classList.remove("open"));
+    clickedElement.classList.add("open");
+    });
+
+    document.body.addEventListener("click", (event) => {});
+    </script>
 </body>
 </html>

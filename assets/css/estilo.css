@@ -1,0 +1,124 @@
+/* Remove margens e paddings padrão de todos os elementos e define box-sizing como border-box */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Define uma variável CSS global para a transição */
+  :root {
+    --transition: cubic-bezier(0.1, 0.7, 0, 1);
+  }
+  
+  /* Define um fundo gradiente para o corpo da página */
+  body {
+    background: linear-gradient(90deg, black, #333);
+  }
+  
+  /* Estilos comuns */
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Altura da viewport */
+    max-width: 100%;
+  }
+  
+  .imgs-parent {
+    display: flex;
+    gap: 0.2rem; /* Espaçamento entre os elementos */
+    perspective: 75rem; /* Define a perspectiva 3D */
+  }
+  
+  .img {
+    width: 5.4rem;
+    height: 21rem;
+    background-size: cover; /* Ajusta a imagem de fundo para cobrir o elemento */
+    background-position: center; /* Centraliza a imagem de fundo */
+    cursor: pointer; /* Muda o cursor para pointer ao passar sobre o elemento */
+    transition: 
+      transform 1.25s var(--transition), 
+      filter 3s var(--transition),
+      width 0.3s var(--transition); /* Define transições para transform, filter e width */
+    position: relative;
+    filter: grayscale(1) brightness(0.5); /* Aplica filtro de escala de cinza e brilho reduzido */
+    will-change: transform, filter; /* Indica que esses estilos podem mudar */
+  }
+  
+  /* Quando o elemento .img é "hovered" */
+  .img:hover {
+    transform: translateZ(13.375rem); /* Move o elemento no eixo Z */
+    filter: inherit; /* Remove os filtros aplicados */
+  }
+  
+  /* Elementos auxiliares para criar efeitos de sombra */
+  .img::before,
+  .img::after {
+    content: "";
+    position: absolute;
+    width: 1.25rem;
+    height: 100%;
+    right: -1.25rem; /* Posiciona à direita */
+  }
+  
+  .img::after {
+    left: -1.25rem; /* Posiciona à esquerda */
+  }
+  
+  /* Quando o elemento à direita é "hovered" */
+  .img:hover + * {
+    transform: translateZ(12.77rem) rotateY(35deg);
+    /* filter: grayscale(0.2) brightness(0.9); */
+    z-index: -1;
+  }
+  
+  .img:hover + * + * {
+    transform: translateZ(9.73rem) rotateY(40deg);
+    /* filter: grayscale(0.4) brightness(0.8); */
+    z-index: -2;
+  }
+  
+  .img:hover + * + * + * {
+    transform: translateZ(4.17rem) rotateY(35deg);
+    /* filter: grayscale(0.6) brightness(0.7); */
+    z-index: -3;
+  }
+  
+  .img:hover + * + * + * + * {
+    transform: translateZ(1.1rem) rotateY(25deg);
+    /* filter: grayscale(0.8) brightness(0.6); */
+    z-index: -4;
+  }
+  
+  /* Quando o elemento à esquerda é "hovered" */
+  .img:has(+ :hover) {
+    transform: translateZ(14.77rem) rotateY(-35deg);
+    /* filter: grayscale(0.2) brightness(0.9); */
+  }
+  
+  .img:has(+ * + :hover) {
+    transform: translateZ(9.73rem) rotateY(-40deg);
+    /* filter: grayscale(0.4) brightness(0.8); */
+  }
+  
+  .img:has(+ * + * + :hover) {
+    transform: translateZ(4.17rem) rotateY(-35deg);
+    /* filter: grayscale(0.6) brightness(0.7); */
+  }
+  
+  .img:has(+ * + * + * + :hover) {
+    transform: translateZ(1.1rem) rotateY(-25deg);
+    /* filter: grayscale(0.8) brightness(0.6); */
+  }
+  
+  /* Quando o elemento é clicado */
+  .open {
+    width: 100%;
+    background-size: cover;
+    background-position: fixed;
+    transform: translateZ(13.375rem);
+    filter: inherit;
+    z-index: 1;
+    margin: 0 0.45vw;
+  }
+  
