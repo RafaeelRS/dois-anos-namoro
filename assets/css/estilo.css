@@ -39,11 +39,13 @@
     position: relative;
     filter: grayscale(1) brightness(0.5);
     will-change: transform, filter;
+    border-radius: 6px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.712);
   }
   
   /* When Hovered */
   .img:hover {
-    transform: translateZ(17.375rem);
+    transform: translateZ(15rem);
     filter: inherit;
   }
   
@@ -63,55 +65,55 @@
   
   /* When Hovered RIGHT */
   .img:hover + * {
-    transform: translateZ(14.77rem) rotateY(35deg);
+    transform: translateZ(13rem) rotateY(35deg);
     filter: grayscale(0.2) brightness(0.9);
     z-index: -1;
   }
   
   .img:hover + * + * {
-    transform: translateZ(9.73rem) rotateY(40deg);
+    transform: translateZ(9rem) rotateY(40deg);
     filter: grayscale(0.4) brightness(0.8);
     z-index: -2;
   }
   
   .img:hover + * + * + * {
-    transform: translateZ(4.17rem) rotateY(35deg);
+    transform: translateZ(4rem) rotateY(35deg);
     filter: grayscale(0.6) brightness(0.7);
     z-index: -3;
   }
   
   .img:hover + * + * + * + * {
-    transform: translateZ(1.1rem) rotateY(25deg);
+    transform: translateZ(0.9rem) rotateY(25deg);
     filter: grayscale(0.8) brightness(0.6);
     z-index: -4;
   }
   
   /* When Hovered LEFT */
   .img:has(+ :hover) {
-    transform: translateZ(14.77rem) rotateY(-35deg);
+    transform: translateZ(13rem) rotateY(-35deg);
     filter: grayscale(0.2) brightness(0.9);
   }
   
   .img:has(+ * + :hover) {
-    transform: translateZ(9.73rem) rotateY(-40deg);
+    transform: translateZ(9rem) rotateY(-40deg);
     filter: grayscale(0.4) brightness(0.8);
   }
   
   .img:has(+ * + * + :hover) {
-    transform: translateZ(4.17rem) rotateY(-35deg);
+    transform: translateZ(4rem) rotateY(-35deg);
     filter: grayscale(0.6) brightness(0.7);
   }
   
   .img:has(+ * + * + * + :hover) {
-    transform: translateZ(1.1rem) rotateY(-25deg);
+    transform: translateZ(0.9rem) rotateY(-25deg);
     filter: grayscale(0.8) brightness(0.6);
   }
   
   /* When clicked */
   .open {
-    width: 25vw;
-    transform: translateZ(17.375rem);
+    width: 18vw;
+    transform: translateZ(15rem);
     filter: inherit;
     z-index: 1;
-    margin: 0 0.45vw;
+    gap: 1;
   }
