@@ -36,8 +36,8 @@
   }
   
   .img {
-    width: 4.2rem;
-    height: 25rem;
+    width: 4rem;
+    height: 23.5rem;
     background-size: cover;
     background-position: center;
     cursor: pointer;
@@ -120,8 +120,8 @@
   
   /* When clicked */
   .open {
-    width: 17vw;
-    transform: translateZ(14rem);
+    width: 16vw;
+    transform: translateZ(10rem);
     filter: inherit;
     z-index: 1;
   }
