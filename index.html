@@ -12,7 +12,9 @@
 
     <div class="wrapper">
       <div class="imgs-parent">
-        <div class="img" style="background-image: url(assets/imgs/1.jpg)"></div>
+        <div class="img" style="background-image: url(assets/imgs/1.jpg)">
+            <p>aoba</p>
+        </div>
         <div class="img" style="background-image: url(assets/imgs/2.jpg)"></div>
         <div class="img" style="background-image: url(assets/imgs/3.jpg)"></div>
         <div class="img" style="background-image: url(assets/imgs/4.jpg)"></div>
@@ -31,19 +33,23 @@
         document.body.addEventListener("click", (event) => {
         const clickedElement = event.target,
         imgs = document.querySelectorAll(".img");
+        const texto = document.querySelector(".img p")
 
         if (!clickedElement.classList.contains("img")) {
             imgs.forEach((img) => img.classList.remove("open"));
+            texto.style.display = "none";
             return;
         }
 
         if (clickedElement.classList.contains("open")) {
             clickedElement.classList.remove("open");
+            texto.style.display = "none";
             return;
         }
 
         imgs.forEach((img) => img.classList.remove("open"));
         clickedElement.classList.add("open");
+        texto.style.display = "block";
         });
 
         document.body.addEventListener("click", (event) => {});

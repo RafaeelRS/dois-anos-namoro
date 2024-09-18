@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa História - [Seu Nome & Nome dela]</title>
+    <link rel="stylesheet" href="historia.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#historia">Nossa História</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="hero">
+            <h1>Bem-vinda, meu amor!</h1>
+            <p>Navegue pela nossa história e descubra mais sobre os momentos que vivemos juntos.</p>
+        </div>
+    </section>
+
+    <section id="historia">
+        <h2>Nossa História</h2>
+        <p>Tudo começou quando...</p>
+        <!-- Adicione o conteúdo narrado aqui -->
+    </section>
+
+    <section id="galeria">
+        <h2>Galeria de Momentos</h2>
+        <div class="gallery">
+            <!-- Fotos e vídeos podem ser colocados aqui -->
+            <img src="../assets/imgs/12.jpg" alt="Foto 1">
+            <img src="../assets/imgs/11.jpg" alt="Foto 2">
+            <img src="../assets/imgs/5.jpg" alt="Foto 3">
+        </div>
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="../assets/imgs/10.jpg" alt="Foto 1">
+                <img src="../assets/imgs/2.jpg" alt="Foto 1">
+                <img src="../assets/imgs/4.jpg" alt="Foto 1">
+            </div>
+            <button id="prevBtn" class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button id="nextBtn" class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <section id="contato">
+        <h2>Contato</h2>
+        <p>Quer saber mais ou enviar uma mensagem? Deixe seu comentário!</p>
+        <form action="#" method="POST">
+            <input type="text" placeholder="Seu nome" required>
+            <input type="email" placeholder="Seu email" required>
+            <textarea placeholder="Escreva sua mensagem"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Feito com 💖 por [Seu Nome]</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
