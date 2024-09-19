@@ -36,14 +36,14 @@
         const texto = document.querySelector(".img p")
 
         if (!clickedElement.classList.contains("img")) {
-            imgs.forEach((img) => img.classList.remove("open"));
             texto.style.display = "none";
+            imgs.forEach((img) => img.classList.remove("open"));
             return;
         }
 
         if (clickedElement.classList.contains("open")) {
-            clickedElement.classList.remove("open");
             texto.style.display = "none";
+            clickedElement.classList.remove("open");
             return;
         }
 
