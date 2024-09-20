@@ -9,16 +9,18 @@
   }
   
   body {
-    background: linear-gradient(90deg, #00012a, #003e75f5);
+    background-image: url("../imgs/3.jpg");
+    background-position: right bottom;
+    background-size: cover;
   }
 
   h1 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Huballi, sans-serif;
     color: white;
     text-align: center;
     padding-top: 1.5rem;
     font-size: 1.5rem;
-    font-variant: small-caps;
+    /* font-variant: small-caps; */
   }
   
   /* COMMON */
@@ -50,18 +52,6 @@
     will-change: transform, filter;
     border-radius: 6px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.712);
-  }
-
-  .img > p {
-    display: none;
-    color: white;
-    text-shadow: 1.5px 1.5px 5px black;
-    position: absolute;
-    padding: 2px;
-    bottom: 4px;
-    left: 4px;
-    /* width: fit-content;
-    height: fit-content; */
   }
   
   /* When Hovered */
@@ -137,3 +127,17 @@
     filter: inherit;
     z-index: 1;
   }
+
+  .texto {
+    display: none;
+}
+
+.texto.visivel {
+    display: block;
+    color: white;
+    text-shadow: 1.5px 1.5px 5px black;
+    position: absolute;
+    padding: 2px;
+    bottom: 4px;
+    left: 4px;
+}

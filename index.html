@@ -5,52 +5,83 @@
     <link rel="shortcut icon" href="assets/favicon/heart.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/estilo.css">
+    <link rel="stylesheet" href="assets/css/fonts.css">
     <title>Projeto 2 anos de namoro</title>
 </head>
 <body>
-    <h1>Um pouco de nós ❤️</h1>
+    <h1>UM POUCO DE NÓS ❤️</h1>
 
     <div class="wrapper">
       <div class="imgs-parent">
         <div class="img" style="background-image: url(assets/imgs/1.jpg)">
-            <p>aoba</p>
+            <p class="texto invisivel">aoba Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque sint, dolor obcaecati repellat officiis expedita atque earum, asperiores molestiae, vel nam? Maxime, iste minima rem doloremque veniam corrupti id ratione.</p>
         </div>
-        <div class="img" style="background-image: url(assets/imgs/2.jpg)"></div>
-        <div class="img" style="background-image: url(assets/imgs/3.jpg)"></div>
-        <div class="img" style="background-image: url(assets/imgs/4.jpg)"></div>
-        <div class="img" style="background-image: url(assets/imgs/5.jpg)"></div>
-        <div class="img" style="background-image: url(assets/imgs/6.jpg)"></div>
-        <div class="img" style="background-image: url(assets/imgs/7.jpg)"></div>
-        <div class="img" style="background-image: url(assets/imgs/8.jpg)"></div>
-        <div class="img" style="background-image: url(assets/imgs/9.jpg)"></div>
-        <div class="img" style="background-image: url(assets/imgs/10.jpg)"></div>
-        <div class="img" style="background-image: url(assets/imgs/11.jpg)"></div>
-        <div class="img" style="background-image: url(assets/imgs/12.jpg)"></div>
+        <div class="img" style="background-image: url(assets/imgs/2.jpg)">
+            <p class="texto">aoba</p>
+        </div>
+        <div class="img" style="background-image: url(assets/imgs/3.jpg)">
+            <p class="texto">aoba</p>
+        </div>
+        <div class="img" style="background-image: url(assets/imgs/4.jpg)">
+            <p class="texto">aoba</p>
+        </div>
+        <div class="img" style="background-image: url(assets/imgs/5.jpg)">
+            <p class="texto">aoba</p>
+        </div>
+        <div class="img" style="background-image: url(assets/imgs/6.jpg)">
+            <p class="texto">aoba</p>
+        </div>
+        <div class="img" style="background-image: url(assets/imgs/7.jpg)">
+            <p class="texto">aoba</p>
+        </div>
+        <div class="img" style="background-image: url(assets/imgs/8.jpg)">
+            <p class="texto">aoba</p>
+        </div>
+        <div class="img" style="background-image: url(assets/imgs/9.jpg)">
+            <p class="texto">aoba</p>
+        </div>
+        <div class="img" style="background-image: url(assets/imgs/10.jpg)">
+            <p class="texto">aoba</p>
+        </div>
+        <div class="img" style="background-image: url(assets/imgs/11.jpg)">
+            <p class="texto">texto 1</p>
+        </div>
+        <div class="img" style="background-image: url(assets/imgs/12.jpg)">
+            <p class="texto">texto 2</p>
+        </div>
       </div>
     </div>
 
     <script>
         document.body.addEventListener("click", (event) => {
-        const clickedElement = event.target,
-        imgs = document.querySelectorAll(".img");
-        const texto = document.querySelector(".img p")
+    const clickedElement = event.target,
+          imgs = document.querySelectorAll(".img"),
+          textos = document.querySelectorAll(".texto");
 
-        if (!clickedElement.classList.contains("img")) {
-            texto.style.display = "none";
-            imgs.forEach((img) => img.classList.remove("open"));
-            return;
-        }
-
-        if (clickedElement.classList.contains("open")) {
-            texto.style.display = "none";
-            clickedElement.classList.remove("open");
-            return;
-        }
-
+    // Se clicar fora das divs .img, fecha todas
+    if (!clickedElement.classList.contains("img")) {
         imgs.forEach((img) => img.classList.remove("open"));
-        clickedElement.classList.add("open");
-        texto.style.display = "block";
-        });
+        textos.forEach((texto) => texto.classList.remove("visivel"));
+        return;
+    }
+
+    // Se clicar em uma imagem aberta, fecha ela
+    if (clickedElement.classList.contains("open")) {
+        clickedElement.classList.remove("open");
+        clickedElement.querySelector(".texto").classList.remove("visivel");
+        return;
+    }
+
+    // Fecha todas as outras divs antes de abrir a nova
+    imgs.forEach((img) => {
+        img.classList.remove("open");
+        img.querySelector(".texto").classList.remove("visivel");
+    });
+
+    // Abre a div clicada e mostra o texto
+    clickedElement.classList.add("open");
+    clickedElement.querySelector(".texto").classList.add("visivel");
+});
 
         document.body.addEventListener("click", (event) => {});
     </script>
