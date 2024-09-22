@@ -10,23 +10,37 @@
 
   @media screen and (max-width: 760px) {
     body {
-      background-repeat: no-repeat;
+      background-repeat: repeat-y !important;
     }
     .imgs-parent {
       display: flex;
       gap: 0.2rem;
-      perspective: 70rem;
+      perspective: 120rem;
       flex-wrap: wrap;
-      flex-shrink: 1;
     }
+
+    .imgs-parent {
+      display: flex;
+      gap: 0.2rem;
+      perspective: 90rem;
+    }
+
     .img {
-      flex-shrink: 1;
+      width: 2.5rem !important;
+      height: 12.5rem !important;
+    }
+    .open {
+      width: 45vw !important; 
+      transform: translateZ(15rem);
+      filter: inherit;
+      z-index: 1;
     }
   }
   
   body {
     background-image: url("../imgs/3.jpg");
     background-position: right bottom;
+    background-repeat: no-repeat;
     background-size: cover;
   }
 
