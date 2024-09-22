@@ -7,6 +7,22 @@
   :root {
     --transition: cubic-bezier(0.1, 0.7, 0, 1);
   }
+
+  @media screen and (max-width: 760px) {
+    body {
+      background-repeat: no-repeat;
+    }
+    .imgs-parent {
+      display: flex;
+      gap: 0.2rem;
+      perspective: 70rem;
+      flex-wrap: wrap;
+      flex-shrink: 1;
+    }
+    .img {
+      flex-shrink: 1;
+    }
+  }
   
   body {
     background-image: url("../imgs/3.jpg");
